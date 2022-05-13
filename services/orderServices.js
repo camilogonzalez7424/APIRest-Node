@@ -28,6 +28,20 @@ const createServices = (app) => {
     });
 
 
+    app.post('/api/ordersProducts/create', (req, res)=>{
+        let orderP = req.body;
+        orderProvider.addProductsToOrder(orderP, (result)=>{
+            res.send(result);
+        });
+    });
+
+    app.put('/api/ordersProducts/update/:id', (req, res)=>{
+        let order = req.params.id;
+        orderProvider.updateOrder(order, (result)=>{
+            res.send(result);
+        })
+    });
+
 
 }
 

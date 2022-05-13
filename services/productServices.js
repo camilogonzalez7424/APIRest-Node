@@ -27,14 +27,6 @@ const createServices = (app) => {
     });
 
 
-    app.post('/api/ordersProducts/create', (req, res)=>{
-        let orderP = req.body;
-        productProvider.addProductsToOrder(orderP, (result)=>{
-            res.send(result);
-        });
-    });
-
-
 }
 
 

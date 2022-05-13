@@ -24,18 +24,9 @@ const addProducts = (product, onresult)=>{
 
 //__________________________________________________________________________________________________________
 
-const addProductsToOrder = (orderP, onresult)=>{
-    db.con.query("INSERT INTO ordersProductsA00370263(orderId,productId,amount) VALUES ('"+orderP.orderId+"','"+orderP.productId+"','"+orderP.amount+"')", (err)=>{
-        if(!err){
-            onresult({result:"OK"});
-        }else{
-            onresult({result:"ERROR"});
-        }
-    });
-}
+
 
 
 
 module.exports.getAll = getAll;
 module.exports.addProducts = addProducts;
-module.exports.addProductsToOrder = addProductsToOrder; 
