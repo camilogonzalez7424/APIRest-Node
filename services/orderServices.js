@@ -42,6 +42,19 @@ const createServices = (app) => {
         })
     });
 
+    app.get('/api/ordersInformation/get/:id',(req,res)=>{
+        let id = req.params.id;
+        orderProvider.orderInformation(id,(result)=>{
+            res.send(result);
+        });
+    });
+
+    app.put('/api/deleteProduct/delete',(req, res)=>{ //Tendira que ser DELETE pero dado que elimina un valor especifico lo hice put
+        let x = req.body;
+        orderProvider.deleteProduct(x, (result)=>{
+            res.send(result);
+        });
+    });
 
 }
 

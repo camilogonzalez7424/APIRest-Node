@@ -26,8 +26,13 @@ const createServices = (app) => {
         });
     });
 
-
-
+    app.get('/api/users/natId/:natId', (req, res)=>{
+        let natId = req.params.natId;
+        userProvider.getNatId(natId, (result)=>{
+            res.send(result);
+        });
+    });
+    
 }
 
 module.exports.createServices = createServices;
